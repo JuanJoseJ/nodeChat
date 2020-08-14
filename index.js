@@ -1,17 +1,18 @@
-var express = require('express')();
+var express = require('express');
 var app = express()
-var http = require('http').createServer(express);
+var http = require('http').createServer(app);
 var io = require('socket.io')(http);
+var path = require('path');
 var port = 3000;
 
-//app.use(express.static('public'));
+app.use(express.static(path.join(__dirname, '')));
 
 //Rutas
-express.get('/chat', (req, res) => {
+app.get('/chat', (req, res) => {
     res.sendFile(__dirname+'/templates/index.html');
 });
 
-express.get('/', (req, res) => {
+app.get('/', (req, res) => {
   res.sendFile(__dirname+'/templates/landing.html');
 });
 
