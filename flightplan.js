@@ -34,7 +34,6 @@ plan.local(function(local) {
   // uncomment these if you need to run a build on your machine first
   // local.log('Run build');
   // local.exec('gulp build');
-
   local.log('Copy files to remote hosts');
   var filesToCopy = local.exec('git ls-files', {silent: true});
   // rsync files to all the destination's hosts
@@ -47,11 +46,15 @@ plan.remote(function(remote) {
   remote.sudo('cp -R /tmp/' + tmpDir + ' ~', {user: username});
   remote.rm('-rf /tmp/' + tmpDir);
 
-  remote.log('Install dependencies');
-  remote.sudo('npm --production --prefix ~/' + tmpDir + ' install ~/' + tmpDir, {user: username});
-
-  remote.log('Reload application');
+  // remote.log('Install dependencies');
+  // remote.sudo('npm --production --prefix ~/' + tmpDir + ' install ~/' + tmpDir, {user: username});
+  var version = remote.prompt('What is the version?');
+  remote.log('ChatBox version ' + version);
+  // remote.log('Reload application');
+  remote.log('Update previous version');
   remote.sudo('ln -snf ~/' + tmpDir + ' ~/'+appName, {user: username});
-  remote.exec('cd ~/'+ appName  + '&&' + 'forever start index.js', {failsafe: true});
+  // remote.sudo('cd ~/'+ appName  + '&&' + 'docker build -t chatbox:' + version + '.', {user: username});
+  // remote.sudo('docker stop node_chat_container && docker rm node_chat_container && docker run --name node_chat_container --restart=always -d -p 80:3000 chatbox:' + version, {user: username});
+  // remote.exec('cd ~/'+ appName  + '&&' + 'forever start index.js', {failsafe: true});
   // remote.exec('cd ~/'+ appName  + '&&' + 'forever stop index.js');
 });
