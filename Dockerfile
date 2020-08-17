@@ -7,4 +7,5 @@ RUN npm --production install
 COPY . .
 EXPOSE 3000
 # RUN npm run prod -- --staging
-CMD [ "npm", "prod" ]
+# RUN npm run prod
+CMD [ "npm", "start" ]

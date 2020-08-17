@@ -5,14 +5,12 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node index.js",
-    "prod": "node server.js"
+    "start": "node index.js"
   },
   "author": "",
   "license": "MIT",
   "dependencies": {
     "express": "^4.17.1",
-    "greenlock-express": "^4.0.3",
     "socket.io": "^2.3.0"
   },
   "devDependencies": {
