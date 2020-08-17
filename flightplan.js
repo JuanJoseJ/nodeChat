@@ -54,7 +54,7 @@ plan.remote(function (remote) {
   remote.log("Update previous version");
   remote.sudo("ln -snf ~/" + tmpDir + " ~/" + appName, { user: username });
   remote.sudo(
-    "cd ~/" + appName + "&&" + "docker build -t chatbox:" + version + ".",
+    "cd ~/" + appName + " && " + "docker build -t chatbox:" + version + " .",
     { user: username }
   );
   remote.sudo(
