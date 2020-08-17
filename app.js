@@ -1,4 +1,4 @@
-'use strict';
+
 
 // Here's a vanilla HTTP app to start,
 // but feel free to replace it with Express, Koa, etc

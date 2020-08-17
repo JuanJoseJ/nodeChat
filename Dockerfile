@@ -6,5 +6,5 @@ RUN npm --production install
 # Copiando toda la app
 COPY . .
 EXPOSE 3000
-RUN npm run prod -- --staging
-# CMD [ "npm", "prod" ]
+# RUN npm run prod -- --staging
+CMD [ "npm", "prod" ]
