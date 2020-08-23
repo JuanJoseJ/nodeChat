@@ -1,11 +1,14 @@
 const sock = io();
 
 const escribirMensaje = (text) => {
+    var d = new Date();
 
     if (text.idEmisor == sock.id) {
         writeEvent(text.mensaje);
+        writeEventRecibido(" ");
     }else{
         writeEventRecibido(text.mensaje);
+        writeEvent(" ");
     }
 
 };
@@ -43,8 +46,10 @@ const onFormSubmitted = (e) => {
     };
 
     input.value = '';
-    
-    sock.emit('message', text);
+
+    if (text.mensaje != '') {
+        sock.emit('message', text);
+    }
 };
 
 sock.on('message', escribirMensaje);
