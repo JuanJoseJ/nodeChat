@@ -1,0 +1,39 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap');
+
+body{
+    font-family: 'Roboto', sans-serif;
+    background: #FFFFFF;
+    
+}
+
+
+main{
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 40px 1fr 40px;
+    grid-template-areas: 
+    "box1 box1"
+    "box3 box2"
+    "box4 box4";
+}
+
+.header-div{
+    background-color: aqua;
+    grid-area: box1;
+}
+
+.chat-enviado{
+    background-color: beige;
+    grid-area: box2;
+}
+
+.chat-recibido{
+    background-color :blueviolet;
+    grid-area: box3;
+}
+
+.barra-enviado{
+    background-color: cadetblue;
+    grid-area: box4;
+}
