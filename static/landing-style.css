@@ -1,0 +1,77 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap');
+
+body{
+    font-family: 'Roboto', sans-serif;
+    background: #FFFFFF;
+    display: block;
+    margin: 0% 0% 0% 0%;
+}
+
+.box1{
+    /* background-color: aqua; */
+    align-self: center;
+    grid-area: box1;
+}
+
+.header{
+    padding-left: 2%;
+}
+
+.box2{
+    padding-top: 20%;
+    
+}
+
+.iner-box2{
+    display: flex;
+    /* background-color: beige; */
+    flex-direction: column;
+    grid-area: box2;
+    align-items: center;
+    padding-left: 20%;
+}
+
+.texto{
+
+    font-size: 24px;
+    text-align: center;
+}
+
+.botonComenzar{
+    
+    width: 216px;
+    height: 73px;
+    align-self: center;
+    background-color: #000000;
+    text-align: center;
+    font-weight: bold;
+    font-size: 22px;
+    border-radius: 5px;
+}
+
+.irChat{
+    text-decoration: none;
+    color: #FFFFFF;
+}
+
+.box3{
+    
+    display: flex;
+    /* background-color :blueviolet; */
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-end;
+    grid-area: box3;
+}
+
+main{
+    height: 100vh;
+    display: grid;
+    grid-template-columns: auto-fit 1fr 1fr;
+    grid-template-rows: 50px  1fr; 
+    grid-template-areas:   
+    "box1  box1"
+    "box2  box3";
+    
+}
+

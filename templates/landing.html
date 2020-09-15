@@ -3,34 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-
-    <style>
-        body {
-            margin: 0;
-        }
-
-        canvas {
-            display: block;
-        }
-    </style>
-    <link rel="stylesheet" href="../static/style.css">
-
+    <title>ChatBox</title>
+    <link rel="stylesheet" href="../static/landing-style.css">
 </head>
+
 <body>
-    
-    <div class="contenedor-header">
-        <h2 id="header" class="header">ChatBox</h2>
-    </div>
-   
-    <div class="main-div">
-        <h1 id="chatBox" class="chat-box">ChatBox</h1>
-        <p id="texto" class="texto">Si te sientes deprimido esta cuarentena no dudes en chatear con nosotros</p>
-        <button type="button" class="botonComenzar" id="botonComenzar">
+  <main>
+      <div class="box1">
+        <img class="header" src="../static/ChatBoxHeader.svg">
+      </div>
+      <div class="box2">
+        <div class="iner-box2">
+          <img src="../static/ChatBox.svg"> 
+          <p class="texto">Si te sientes deprimido esta cuarentena no dudes en chatear con nosotros</p>
+          <button type="button" class="botonComenzar" id="botonComenzar">
             <a id="irChat" class="irChat" href="/chat">Comenzar</a>
         </button>
-        <img class="cohete" id="cohete" src="../static/rocket.svg"/>
-    </div>
-    
+        </div>
+      </div>
+      <div class="box3">
+        <img src="../static/rocket.svg">
+      </div>
+  </main>  
 </body>
 </html>

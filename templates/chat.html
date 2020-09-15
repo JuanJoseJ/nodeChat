@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <title>ChatBox chat</title>
+        <link rel="stylesheet" href="../static/chat-style.css">
+    </head>
+
+    <body>
+        <main>
+            <div class="header-div">
+                <a id="irHome" class="irHome" href="/">
+                    <img class="header" src="../static/ChatBoxHeader.svg">
+                </a>
+            </div>
+
+            <div class="chat-enviado">
+                <ul id="evento-enviado"></ul>
+            </div>
+            <div class="chat-recibido">
+                <ul id="evento-recibido"></ul>
+            </div>
+            <div class="barra-enviado">
+                <form id="chat-form" class="chat-form">
+                    <input id="chat" class="chat">
+                    <button id="send" class="send">Send</button>
+                </form>  
+            </div>
+        </main>
+        <script src="/socket.io/socket.io.js"></script>
+        <script src="../static/client.js"></script>
+    </body>
+
+</html>

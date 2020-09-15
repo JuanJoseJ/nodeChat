@@ -9,7 +9,7 @@ app.use(express.static(path.join(__dirname, '')));
 
 //Rutas
 app.get('/chat', (req, res) => {
-    res.sendFile(__dirname+'/templates/index.html');
+    res.sendFile(__dirname+'/templates/chat.html');
 });
 
 app.get('/', (req, res) => {
@@ -24,9 +24,9 @@ http.listen(port, () => {
 //Controlador del socket
 io.on('connection', (socket) => {
     console.log('Se ha establecido una conexión');
-    socket.on('chat message', (msg) => {
-        io.emit('chat message', msg);
-        console.log('Mensaje en el puerto '+port+": " + msg);
+    socket.on('message', (text) => {
+        io.emit('message', text);
+        console.log('Mensaje en el puerto '+port+": " + text.mensaje);
     });
     socket.on('disconnect', () => {
         console.log('Se ha cortado una conexión');
